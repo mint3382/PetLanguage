@@ -39,6 +39,9 @@ class PetInformationViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureStackView()
+        petName.delegate = self
+        petAge.delegate = self
+        petSpecies.delegate = self
     }
 
     func configureStackView() {
@@ -59,6 +62,17 @@ class PetInformationViewController: UIViewController {
             petImage.widthAnchor.constraint(equalToConstant: 150)
         ])
     }
+}
 
+extension PetInformationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == petName {
+            petAge.becomeFirstResponder()
+        } else if textField == petAge {
+            petSpecies.becomeFirstResponder()
+        } else {
+            petSpecies.resignFirstResponder()
+        }
+    }
 }
 

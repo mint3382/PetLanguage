@@ -12,6 +12,7 @@ extension UITextField {
         self.init(frame: .zero)
         self.placeholder = placeholder
         self.borderStyle = .roundedRect
+        self.becomeFirstResponder()
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

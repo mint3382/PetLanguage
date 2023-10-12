@@ -46,6 +46,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = name
         view.backgroundColor = .systemBackground
         tableView.delegate = self
         tableView.dataSource = self
@@ -111,6 +112,4 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-    
-    
 }
