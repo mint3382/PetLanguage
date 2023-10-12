@@ -19,7 +19,13 @@ class PetInformationViewController: UIViewController {
     let petSpecies = UITextField(placeholder: "종을 입력하세요")
     lazy var startButton = UIButton(title: " 대화 시작 ", color: .systemCyan) {
         lazy var uiAction = UIAction() { action in
-            let nextViewController = ChatViewController(nibName: nil, bundle: nil)
+            guard let name = self.petName.text,
+                  let age = self.petAge.text,
+                  let species = self.petSpecies.text else {
+                return
+            }
+            
+            let nextViewController = ChatViewController(name: name, age: age, species: species)
             
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }
@@ -33,7 +39,6 @@ class PetInformationViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureStackView()
-        // Do any additional setup after loading the view.
     }
 
     func configureStackView() {
