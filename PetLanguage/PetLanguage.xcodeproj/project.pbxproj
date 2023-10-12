@@ -14,6 +14,8 @@
 		92C43EEF2AD8135600B4DADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */; };
 		92C43EF72AD8179100B4DADE /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EF62AD8179100B4DADE /* UITextField+.swift */; };
 		92C43EF92AD819F800B4DADE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EF82AD819F800B4DADE /* ChatViewController.swift */; };
+		92C43EFB2AD81F7700B4DADE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */; };
+		92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFC2AD81F9200B4DADE /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		92C43EF02AD8135600B4DADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C43EF62AD8179100B4DADE /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		92C43EF82AD819F800B4DADE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		92C43EFC2AD81F9200B4DADE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				92C43EEB2AD8135600B4DADE /* Assets.xcassets */,
 				92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */,
 				92C43EF02AD8135600B4DADE /* Info.plist */,
+				92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */,
+				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
 			);
 			path = PetLanguage;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */,
+				92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */,
+				92C43EFB2AD81F7700B4DADE /* UIStackView+.swift in Sources */,
 				92C43EF92AD819F800B4DADE /* ChatViewController.swift in Sources */,
 				92C43EE32AD8135500B4DADE /* AppDelegate.swift in Sources */,
 				92C43EE52AD8135500B4DADE /* SceneDelegate.swift in Sources */,
