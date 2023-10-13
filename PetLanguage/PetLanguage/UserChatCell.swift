@@ -10,17 +10,7 @@ import UIKit
 class UserChatCell: UITableViewCell {
     static let identifier: String = "UserChatCell"
     
-    let chat: UITextView = {
-        let textView = UITextView()
-        textView.isScrollEnabled = false
-        textView.isEditable = false
-        textView.backgroundColor = .cyan
-        textView.layer.cornerRadius = 8
-        textView.sizeToFit()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return textView
-    }()
+    let chat = UITextView(backgroundColor: .cyan, isEditable: false)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

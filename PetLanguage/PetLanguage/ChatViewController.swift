@@ -8,9 +8,7 @@
 import UIKit
 
 class ChatViewController: UIViewController {
-    let name: String
-    let age: String
-    let species: String
+    let pet: Pet
     var chats: [Chat] = []
     let tableView: UITableView = {
         let tableView = UITableView()
@@ -19,12 +17,13 @@ class ChatViewController: UIViewController {
         
         return tableView
     }()
-    let userInput = UITextField(placeholder: "입력하세요")
+    let userInputTextView = UITextView(backgroundColor: .systemBackground, isScrollEnabled: true, isEditable: true, borderColor: UIColor.darkGray.cgColor)
+    
     lazy var sendButton = UIButton {
         lazy var action = UIAction() { action in
-            let userChat = Chat(sender: .user, message: self.userInput.text)
+            let userChat = Chat(sender: .user, message: self.userInputTextView.text)
             self.chats.append(userChat)
-            self.userInput.text = ""
+            self.userInputTextView.text = ""
             self.tableView.reloadData()
             //self.updateChat(count: self.chats.count)
         }
@@ -33,10 +32,8 @@ class ChatViewController: UIViewController {
     }
     let lineStackView = UIStackView(axis: .horizontal)
     
-    init(name: String, age: String, species: String) {
-        self.name = name
-        self.age = age
-        self.species = species
+    init(pet: Pet) {
+        self.pet = pet
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,7 +43,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = name
+        navigationItem.title = pet.name
         view.backgroundColor = .systemBackground
         tableView.delegate = self
         tableView.dataSource = self
@@ -69,7 +66,7 @@ class ChatViewController: UIViewController {
     
     func configureChatLine() {
         view.addSubview(lineStackView)
-        lineStackView.addArrangedSubview(userInput)
+        lineStackView.addArrangedSubview(userInputTextView)
         lineStackView.addArrangedSubview(sendButton)
         
         NSLayoutConstraint.activate([
@@ -77,7 +74,8 @@ class ChatViewController: UIViewController {
             lineStackView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 8),
             lineStackView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: -8),
             lineStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            userInput.widthAnchor.constraint(lessThanOrEqualTo: lineStackView.widthAnchor, multiplier: 0.8)
+            userInputTextView.widthAnchor.constraint(lessThanOrEqualTo: lineStackView.widthAnchor, multiplier: 0.8),
+            userInputTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 45)
         ])
     }
     

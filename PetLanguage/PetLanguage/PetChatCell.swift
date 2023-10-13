@@ -10,16 +10,7 @@ import UIKit
 class PetChatCell: UITableViewCell {
     static let identifier: String = "PetChatCell"
     
-    let chat: UITextView = {
-        let textView = UITextView()
-        textView.isScrollEnabled = false
-        textView.isEditable = false
-        textView.backgroundColor = .cyan
-        textView.layer.cornerRadius = 8
-        textView.sizeToFit()
-        
-        return textView
-    }()
+    let chat = UITextView(backgroundColor: .systemGray5, isEditable: false)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

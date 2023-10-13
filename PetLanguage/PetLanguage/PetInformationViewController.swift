@@ -25,7 +25,9 @@ class PetInformationViewController: UIViewController {
                 return
             }
             
-            let nextViewController = ChatViewController(name: name, age: age, species: species)
+            let pet = Pet(name: name, age: Int(age) ?? 1, species: species)
+            
+            let nextViewController = ChatViewController(pet: pet)
             
             self.navigationController?.pushViewController(nextViewController, animated: true)
         }
