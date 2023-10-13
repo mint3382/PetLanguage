@@ -28,7 +28,7 @@ class PetChatCell: UITableViewCell {
         NSLayoutConstraint.activate([
             chat.topAnchor.constraint(equalTo: contentView.topAnchor),
             chat.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            chat.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            chat.heightAnchor.constraint(greaterThanOrEqualToConstant: 45),
             chat.widthAnchor.constraint(lessThanOrEqualToConstant: 200)
         ])
     }
