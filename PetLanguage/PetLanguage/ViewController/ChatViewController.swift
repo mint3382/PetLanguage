@@ -43,12 +43,21 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = pet.name
-        view.backgroundColor = .systemBackground
+        settingTableView()
+        configureUI()
+    }
+    
+    func settingTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UserChatCell.self, forCellReuseIdentifier: "UserChatCell")
         tableView.register(PetChatCell.self, forCellReuseIdentifier: "PetChatCell")
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func configureUI() {
+        navigationItem.title = pet.name
+        view.backgroundColor = .systemBackground
         configureTableView()
         configureChatLine()
     }
@@ -60,7 +69,7 @@ class ChatViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
         ])
     }
     
@@ -74,7 +83,7 @@ class ChatViewController: UIViewController {
             lineStackView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 8),
             lineStackView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: -8),
             lineStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            userInputTextView.widthAnchor.constraint(lessThanOrEqualTo: lineStackView.widthAnchor, multiplier: 0.8),
+            userInputTextView.widthAnchor.constraint(lessThanOrEqualTo: lineStackView.widthAnchor, multiplier: 0.9),
             userInputTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 45)
         ])
     }

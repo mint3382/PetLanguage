@@ -33,8 +33,13 @@ class UserChatCell: UITableViewCell {
         NSLayoutConstraint.activate([
             chat.topAnchor.constraint(equalTo: contentView.topAnchor),
             chat.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            chat.heightAnchor.constraint(greaterThanOrEqualToConstant: 45),
-            chat.widthAnchor.constraint(lessThanOrEqualToConstant: 300)
+            chat.heightAnchor.constraint(greaterThanOrEqualToConstant: 25),
+            chat.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
+            chat.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            contentView.heightAnchor.constraint(equalTo: chat.heightAnchor)
         ])
     }
 }

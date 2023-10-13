@@ -53,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923902F62AD8E29700937818 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				92C43EFF2AD849DB00B4DADE /* UserChatCell.swift */,
+				92C43F012AD849F000B4DADE /* PetChatCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		923902F72AD8E2AC00937818 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				92C43EE62AD8135500B4DADE /* PetInformationViewController.swift */,
+				92C43EF82AD819F800B4DADE /* ChatViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		92C43ED62AD8135500B4DADE = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +91,12 @@
 			isa = PBXGroup;
 			children = (
 				92C43EFE2AD8203000B4DADE /* Extension */,
+				923902F72AD8E2AC00937818 /* ViewController */,
+				923902F62AD8E29700937818 /* TableViewCell */,
 				92C43EE22AD8135500B4DADE /* AppDelegate.swift */,
 				92C43EE42AD8135500B4DADE /* SceneDelegate.swift */,
 				923902F02AD8720E00937818 /* Chat.swift */,
 				923902F42AD8E18E00937818 /* Pet.swift */,
-				92C43EE62AD8135500B4DADE /* PetInformationViewController.swift */,
-				92C43EF82AD819F800B4DADE /* ChatViewController.swift */,
-				92C43EFF2AD849DB00B4DADE /* UserChatCell.swift */,
-				92C43F012AD849F000B4DADE /* PetChatCell.swift */,
 				92C43EEB2AD8135600B4DADE /* Assets.xcassets */,
 				92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */,
 				92C43EF02AD8135600B4DADE /* Info.plist */,
