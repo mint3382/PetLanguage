@@ -11,6 +11,8 @@
 		923902F32AD8E0D800937818 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902F22AD8E0D800937818 /* UITextView+.swift */; };
 		923902F52AD8E18E00937818 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902F42AD8E18E00937818 /* Pet.swift */; };
 		923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FA2AD98DD700937818 /* ChatGPTData.swift */; };
+		923902FD2AD98F2700937818 /* ChatGPTInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923902FC2AD98F2700937818 /* ChatGPTInfo.plist */; };
+		923902FF2AD98FE000937818 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FE2AD98FE000937818 /* Bundle+.swift */; };
 		92C43EE32AD8135500B4DADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE22AD8135500B4DADE /* AppDelegate.swift */; };
 		92C43EE52AD8135500B4DADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE42AD8135500B4DADE /* SceneDelegate.swift */; };
 		92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE62AD8135500B4DADE /* PetInformationViewController.swift */; };
@@ -29,6 +31,8 @@
 		923902F22AD8E0D800937818 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		923902F42AD8E18E00937818 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		923902FA2AD98DD700937818 /* ChatGPTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
+		923902FC2AD98F2700937818 /* ChatGPTInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ChatGPTInfo.plist; sourceTree = "<group>"; };
+		923902FE2AD98FE000937818 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		92C43EDF2AD8135500B4DADE /* PetLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C43EE22AD8135500B4DADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C43EE42AD8135500B4DADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				92C43EEB2AD8135600B4DADE /* Assets.xcassets */,
 				92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */,
 				92C43EF02AD8135600B4DADE /* Info.plist */,
+				923902FC2AD98F2700937818 /* ChatGPTInfo.plist */,
 			);
 			path = PetLanguage;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */,
 				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
 				923902F22AD8E0D800937818 /* UITextView+.swift */,
+				923902FE2AD98FE000937818 /* Bundle+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C43EEF2AD8135600B4DADE /* LaunchScreen.storyboard in Resources */,
+				923902FD2AD98F2700937818 /* ChatGPTInfo.plist in Resources */,
 				92C43EEC2AD8135600B4DADE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */,
+				923902FF2AD98FE000937818 /* Bundle+.swift in Sources */,
 				92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */,
 				92C43F022AD849F000B4DADE /* PetChatCell.swift in Sources */,
 				923902F12AD8720E00937818 /* Chat.swift in Sources */,
