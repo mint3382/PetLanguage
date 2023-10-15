@@ -8,11 +8,8 @@
 import UIKit
 
 extension UITextView {
-    convenience init(backgroundColor: UIColor, isScrollEnabled: Bool = false ,isEditable: Bool = false, borderColor: CGColor = UIColor.systemBackground.cgColor) {
+    convenience init(borderColor: CGColor) {
         self.init(frame: .zero)
-        self.isScrollEnabled = isScrollEnabled
-        self.isEditable = isEditable
-        self.backgroundColor = backgroundColor
         self.layer.borderColor = borderColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 8

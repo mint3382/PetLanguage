@@ -23,7 +23,7 @@ class ChatViewController: UIViewController {
         
         return tableView
     }()
-    let userInputTextView = UITextView(backgroundColor: .systemBackground, isScrollEnabled: true, isEditable: true, borderColor: UIColor.darkGray.cgColor)
+    let userInputTextView = UITextView(borderColor: UIColor.darkGray.cgColor)
     
     lazy var sendButton = UIButton {
         lazy var action = UIAction() { action in
@@ -37,6 +37,7 @@ class ChatViewController: UIViewController {
     }
     
     let lineStackView = UIStackView(axis: .horizontal)
+    let fullStackView = UIStackView(axis: .vertical)
     
     init(pet: Pet) {
         self.pet = pet
@@ -58,7 +59,6 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UserChatCell.self, forCellReuseIdentifier: "UserChatCell")
         tableView.register(PetChatCell.self, forCellReuseIdentifier: "PetChatCell")
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func configureUI() {
@@ -85,10 +85,10 @@ class ChatViewController: UIViewController {
         lineStackView.addArrangedSubview(sendButton)
         
         NSLayoutConstraint.activate([
-            lineStackView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+            //lineStackView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
             lineStackView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 8),
             lineStackView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: -8),
-            lineStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            lineStackView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.bottomAnchor),
             userInputTextView.widthAnchor.constraint(lessThanOrEqualTo: lineStackView.widthAnchor, multiplier: 0.9),
             userInputTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 45)
         ])
@@ -122,6 +122,37 @@ class ChatViewController: UIViewController {
 //            }
 //        }
 //    }
+    
+//    func setUpNotification() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
+    
+//    @objc func keyboardWillShow(_ notification: Notification) {
+//        guard let userInfo = notification.userInfo as NSDictionary?,
+//              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+//            return
+//        }
+//        let keyboardRectangle = keyboardFrame.cgRectValue
+//       
+//        if (userInputTextView.inputViewController?.isEditing == true) {
+//            keyboardAnimate(keyboardRectangle: keyboardRectangle)
+//        }
+//    }
+    
+//    func keyboardAnimate(keyboardRectangle: CGRect) {
+//        if keyboardRectangle.height > (self.view.frame.height - userInputTextView.frame.maxY) {
+//            self.view.transform = CGAffineTransform(translationX: 0, y: (self.view.frame.height - keyboardRectangle.height - userInputTextView.frame.maxY))
+//        }
+//    }
+    
+//    @objc func keyboardWillHide(notification: Notification) {
+//        self.view.transform = .identity
+//    }
+//    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -132,11 +163,11 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if chats[indexPath.row].sender == .user {
             let cell = tableView.dequeueReusableCell(withIdentifier: UserChatCell.identifier, for: indexPath) as! UserChatCell
-            cell.chat.text = chats[indexPath.row].message
+            cell.chatLabel.text = chats[indexPath.row].message
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: PetChatCell.identifier, for: indexPath) as! PetChatCell
-            cell.chat.text = chats[indexPath.row].message
+            cell.chatLabel.text = chats[indexPath.row].message
             return cell
         }
     }
