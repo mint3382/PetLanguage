@@ -13,8 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let petInformationViewController = PetInformationViewController()
-        let navigationViewController = UINavigationController(rootViewController: petInformationViewController)
+        let firstViewController = PetInformationViewController()
+        let navigationViewController = UINavigationController(rootViewController: firstViewController)
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationViewController

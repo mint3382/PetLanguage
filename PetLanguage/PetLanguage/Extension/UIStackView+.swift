@@ -13,7 +13,6 @@ extension UIStackView {
         self.axis = axis
         self.spacing = 8
         self.alignment = .center
-//        self.distribution = .fillProportionally
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
