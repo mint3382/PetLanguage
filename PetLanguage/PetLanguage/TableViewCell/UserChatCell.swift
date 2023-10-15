@@ -9,8 +9,8 @@ import UIKit
 
 class UserChatCell: UITableViewCell {
     static let identifier: String = "UserChatCell"
-    
-    let chat = UITextView(backgroundColor: .cyan, isEditable: false)
+
+    let chatLabel = UILabel(backgroundColor: .cyan)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,24 +22,13 @@ class UserChatCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0))
-    }
-    
     func configureChat() {
-        contentView.addSubview(chat)
+        contentView.addSubview(chatLabel)
         
         NSLayoutConstraint.activate([
-            chat.topAnchor.constraint(equalTo: contentView.topAnchor),
-            chat.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            chat.heightAnchor.constraint(greaterThanOrEqualToConstant: 25),
-            chat.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
-            chat.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            contentView.heightAnchor.constraint(equalTo: chat.heightAnchor)
+            chatLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            chatLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            chatLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }
