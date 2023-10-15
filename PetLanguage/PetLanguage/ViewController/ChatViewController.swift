@@ -9,7 +9,13 @@ import UIKit
 
 class ChatViewController: UIViewController {
     let pet: Pet
-    var chats: [Chat] = []
+    var chats: [Chat] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
@@ -24,12 +30,12 @@ class ChatViewController: UIViewController {
             let userChat = Chat(sender: .user, message: self.userInputTextView.text)
             self.chats.append(userChat)
             self.userInputTextView.text = ""
-            self.tableView.reloadData()
-            //self.updateChat(count: self.chats.count)
+            self.makeRequest()
         }
         
         return action
     }
+    
     let lineStackView = UIStackView(axis: .horizontal)
     
     init(pet: Pet) {
@@ -89,17 +95,32 @@ class ChatViewController: UIViewController {
     }
     
     // 서버에게 데이터 받기
-    
-    
-    
-//    func updateChat(count: Int) {
-//        let indexPath = IndexPath(row: count - 1, section: 0)
-//        
-//        self.tableView.beginUpdates()
-//        self.tableView.insertRows(at: [indexPath], with: .none)
-//        self.tableView.endUpdates()
-//        
-//        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+    func makeRequest() {
+        let settings: [PetSetting] = [PetSetting(role: .system, message: "너는 \(pet.name)라는 이름을 가진 \(pet.age)살의 \(pet.species)이다."), PetSetting(role: .user, message: chats.last?.message ?? "")]
+        
+        let networkManager = Network()
+        let request = networkManager.makeURLRequest(chats: settings)
+        let _: () = networkManager.performRequest(request: request) { result in
+            switch result {
+            case .success(let data):
+                let petChat = Chat(sender: .pet, message: data.choices[0].message.content)
+                self.chats.append(petChat)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+//
+//        Task {
+//            do {
+//                let answer = try await Network.fetchChat(chats: settings)
+//                let petChat = Chat(sender: .pet, message: answer.choices[0].message.content)
+//                self.chats.append(petChat)
+//                self.tableView.reloadData()
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
 //    }
 }
 
