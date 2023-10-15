@@ -13,6 +13,7 @@
 		923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FA2AD98DD700937818 /* ChatGPTData.swift */; };
 		923902FD2AD98F2700937818 /* ChatGPTInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923902FC2AD98F2700937818 /* ChatGPTInfo.plist */; };
 		923902FF2AD98FE000937818 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FE2AD98FE000937818 /* Bundle+.swift */; };
+		923903022AD9948500937818 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903012AD9948500937818 /* Network.swift */; };
 		923903042ADAE88800937818 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903032ADAE88800937818 /* Role.swift */; };
 		923903062ADAE93C00937818 /* PetSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903052ADAE93C00937818 /* PetSetting.swift */; };
 		92C43EE32AD8135500B4DADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE22AD8135500B4DADE /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		923902FA2AD98DD700937818 /* ChatGPTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
 		923902FC2AD98F2700937818 /* ChatGPTInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ChatGPTInfo.plist; sourceTree = "<group>"; };
 		923902FE2AD98FE000937818 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		923903012AD9948500937818 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		923903032ADAE88800937818 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		923903052ADAE93C00937818 /* PetSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSetting.swift; sourceTree = "<group>"; };
 		92C43EDF2AD8135500B4DADE /* PetLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				923902F62AD8E29700937818 /* TableViewCell */,
 				92C43EE22AD8135500B4DADE /* AppDelegate.swift */,
 				92C43EE42AD8135500B4DADE /* SceneDelegate.swift */,
+				923903012AD9948500937818 /* Network.swift */,
 				92C43EEB2AD8135600B4DADE /* Assets.xcassets */,
 				92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */,
 				92C43EF02AD8135600B4DADE /* Info.plist */,
@@ -224,6 +227,7 @@
 				923902F52AD8E18E00937818 /* Pet.swift in Sources */,
 				923902F32AD8E0D800937818 /* UITextView+.swift in Sources */,
 				92C43EF72AD8179100B4DADE /* UITextField+.swift in Sources */,
+				923903022AD9948500937818 /* Network.swift in Sources */,
 				923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
