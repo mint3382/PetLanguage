@@ -8,24 +8,39 @@
 import UIKit
 
 class PetInformationViewController: UIViewController {
-    let petImage: UIImageView = {
+    let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "cat1")
+        imageView.image = UIImage(named: "logo")
         
         return imageView
     }()
-    let petName = UITextField(placeholder: "이름을 입력하세요")
-    let petAge = UITextField(placeholder: "나이를 입력하세요")
-    let petSpecies = UITextField(placeholder: "종을 입력하세요")
-    lazy var startButton = UIButton(title: " 대화 시작 ", color: .systemCyan) {
+    let petName = UITextField(placeholder: "이름")
+    let petAge = UITextField(placeholder: "나이")
+    lazy var catButton = UIButton(title: " 고양이 ", color: .systemGreen) {
         lazy var uiAction = UIAction() { action in
             guard let name = self.petName.text,
-                  let age = self.petAge.text,
-                  let species = self.petSpecies.text else {
+                  let age = self.petAge.text else {
                 return
             }
             
-            let pet = Pet(name: name, age: Int(age) ?? 1, species: species)
+            let pet = Pet(name: name, age: Int(age) ?? 100, species: .cat)
+            
+            let nextViewController = ChatViewController(pet: pet)
+            
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        }
+        
+        return uiAction
+    }
+    
+    lazy var dogButton = UIButton(title: " 강아지 ", color: .orange) {
+        lazy var uiAction = UIAction() { action in
+            guard let name = self.petName.text,
+                  let age = self.petAge.text else {
+                return
+            }
+            
+            let pet = Pet(name: name, age: Int(age) ?? 1, species: .dog)
             
             let nextViewController = ChatViewController(pet: pet)
             
@@ -43,16 +58,15 @@ class PetInformationViewController: UIViewController {
         configureStackView()
         petName.delegate = self
         petAge.delegate = self
-        petSpecies.delegate = self
     }
 
     func configureStackView() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(petImage)
+        stackView.addArrangedSubview(logoImage)
         stackView.addArrangedSubview(petName)
         stackView.addArrangedSubview(petAge)
-        stackView.addArrangedSubview(petSpecies)
-        stackView.addArrangedSubview(startButton)
+        stackView.addArrangedSubview(catButton)
+        stackView.addArrangedSubview(dogButton)
         
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -60,8 +74,8 @@ class PetInformationViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            petImage.heightAnchor.constraint(equalToConstant: 150),
-            petImage.widthAnchor.constraint(equalToConstant: 150)
+            logoImage.heightAnchor.constraint(equalToConstant: 400),
+            logoImage.widthAnchor.constraint(equalToConstant: 400)
         ])
     }
 }
@@ -70,10 +84,8 @@ extension PetInformationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == petName {
             petAge.becomeFirstResponder()
-        } else if textField == petAge {
-            petSpecies.becomeFirstResponder()
         } else {
-            petSpecies.resignFirstResponder()
+            petAge.resignFirstResponder()
         }
     }
 }

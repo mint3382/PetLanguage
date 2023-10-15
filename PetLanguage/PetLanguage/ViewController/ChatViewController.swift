@@ -96,7 +96,7 @@ class ChatViewController: UIViewController {
     
     // 서버에게 데이터 받기
     func makeRequest() {
-        let settings: [PetSetting] = [PetSetting(role: .system, message: "너는 \(pet.name)라는 이름을 가진 \(pet.age)살의 \(pet.species)이다."), PetSetting(role: .user, message: chats.last?.message ?? "")]
+        let settings: [PetSetting] = [PetSetting(role: .system, message: pet.makePrompt()), PetSetting(role: .user, message: chats.last?.message ?? "")]
         
         let networkManager = Network()
         let request = networkManager.makeURLRequest(chats: settings)
@@ -110,49 +110,6 @@ class ChatViewController: UIViewController {
             }
         }
     }
-//
-//        Task {
-//            do {
-//                let answer = try await Network.fetchChat(chats: settings)
-//                let petChat = Chat(sender: .pet, message: answer.choices[0].message.content)
-//                self.chats.append(petChat)
-//                self.tableView.reloadData()
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
-//    func setUpNotification() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-//    }
-    
-//    @objc func keyboardWillShow(_ notification: Notification) {
-//        guard let userInfo = notification.userInfo as NSDictionary?,
-//              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
-//            return
-//        }
-//        let keyboardRectangle = keyboardFrame.cgRectValue
-//       
-//        if (userInputTextView.inputViewController?.isEditing == true) {
-//            keyboardAnimate(keyboardRectangle: keyboardRectangle)
-//        }
-//    }
-    
-//    func keyboardAnimate(keyboardRectangle: CGRect) {
-//        if keyboardRectangle.height > (self.view.frame.height - userInputTextView.frame.maxY) {
-//            self.view.transform = CGAffineTransform(translationX: 0, y: (self.view.frame.height - keyboardRectangle.height - userInputTextView.frame.maxY))
-//        }
-//    }
-    
-//    @objc func keyboardWillHide(notification: Notification) {
-//        self.view.transform = .identity
-//    }
-//    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {

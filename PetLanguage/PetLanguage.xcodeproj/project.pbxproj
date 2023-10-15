@@ -139,6 +139,7 @@
 				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
 				923902F22AD8E0D800937818 /* UITextView+.swift */,
 				923902FE2AD98FE000937818 /* Bundle+.swift */,
+				9239030A2ADBDDBB00937818 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
