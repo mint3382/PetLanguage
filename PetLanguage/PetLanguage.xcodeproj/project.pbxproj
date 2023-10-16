@@ -16,7 +16,7 @@
 		923903022AD9948500937818 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903012AD9948500937818 /* Network.swift */; };
 		923903042ADAE88800937818 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903032ADAE88800937818 /* Role.swift */; };
 		923903062ADAE93C00937818 /* PetSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903052ADAE93C00937818 /* PetSetting.swift */; };
-		9239030B2ADBDDBB00937818 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239030A2ADBDDBB00937818 /* UILabel+.swift */; };
+		9239030B2ADBDDBB00937818 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239030A2ADBDDBB00937818 /* PaddingLabel.swift */; };
 		92C43EE32AD8135500B4DADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE22AD8135500B4DADE /* AppDelegate.swift */; };
 		92C43EE52AD8135500B4DADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE42AD8135500B4DADE /* SceneDelegate.swift */; };
 		92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE62AD8135500B4DADE /* PetInformationViewController.swift */; };
@@ -40,7 +40,7 @@
 		923903012AD9948500937818 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		923903032ADAE88800937818 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		923903052ADAE93C00937818 /* PetSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSetting.swift; sourceTree = "<group>"; };
-		9239030A2ADBDDBB00937818 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		9239030A2ADBDDBB00937818 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		92C43EDF2AD8135500B4DADE /* PetLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C43EE22AD8135500B4DADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C43EE42AD8135500B4DADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +97,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		92B0D6382ADD6E5B0014D17C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9239030A2ADBDDBB00937818 /* PaddingLabel.swift */,
+				923902F62AD8E29700937818 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92B0D6392ADD6E6A0014D17C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				923903012AD9948500937818 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		92C43ED62AD8135500B4DADE = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +135,11 @@
 			children = (
 				92C43EFE2AD8203000B4DADE /* Extension */,
 				923903002AD9944A00937818 /* Model */,
+				92B0D6382ADD6E5B0014D17C /* View */,
 				923902F72AD8E2AC00937818 /* ViewController */,
-				923902F62AD8E29700937818 /* TableViewCell */,
+				92B0D6392ADD6E6A0014D17C /* Network */,
 				92C43EE22AD8135500B4DADE /* AppDelegate.swift */,
 				92C43EE42AD8135500B4DADE /* SceneDelegate.swift */,
-				923903012AD9948500937818 /* Network.swift */,
 				92C43EEB2AD8135600B4DADE /* Assets.xcassets */,
 				92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */,
 				92C43EF02AD8135600B4DADE /* Info.plist */,
@@ -139,7 +156,6 @@
 				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
 				923902F22AD8E0D800937818 /* UITextView+.swift */,
 				923902FE2AD98FE000937818 /* Bundle+.swift */,
-				9239030A2ADBDDBB00937818 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -215,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9239030B2ADBDDBB00937818 /* UILabel+.swift in Sources */,
+				9239030B2ADBDDBB00937818 /* PaddingLabel.swift in Sources */,
 				92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */,
 				923902FF2AD98FE000937818 /* Bundle+.swift in Sources */,
 				92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */,
