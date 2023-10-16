@@ -7,11 +7,21 @@
 
 import Foundation
 
-struct Pet {
-    enum PetType {
-        case cat
-        case dog
+enum PetType {
+    case cat
+    case dog
+    
+    func randomImage() -> String {
+        switch self {
+        case .cat:
+            return "cat\(Int.random(in: 1...16))"
+        case .dog:
+            return "dog\(Int.random(in: 1...5))"
+        }
     }
+}
+
+struct Pet {
     
     let name: String
     let age: Int
