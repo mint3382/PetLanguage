@@ -10,7 +10,7 @@ import UIKit
 class UserChatCell: UITableViewCell {
     static let identifier: String = "UserChatCell"
 
-    let chatLabel = UILabel(backgroundColor: .cyan)
+    let chatLabel = PaddingLabel(backgroundColor: .cyan)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,9 +26,9 @@ class UserChatCell: UITableViewCell {
         contentView.addSubview(chatLabel)
         
         NSLayoutConstraint.activate([
-            chatLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            chatLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
             chatLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            chatLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            chatLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2)
         ])
     }
 }
