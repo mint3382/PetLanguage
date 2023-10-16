@@ -14,7 +14,6 @@ extension UITextView {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 8
         self.textContainer.maximumNumberOfLines = 0
-        self.sizeToFit()
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

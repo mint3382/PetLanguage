@@ -25,15 +25,18 @@ class ChatViewController: UIViewController {
         return tableView
     }()
     let userInputTextView = UITextView(borderColor: UIColor.darkGray.cgColor)
-    lazy var sendButton = UIButton {
-        lazy var action = UIAction() { action in
-            let userChat = Chat(sender: .user, message: self.userInputTextView.text)
-            self.chats.append(userChat)
-            self.userInputTextView.text = ""
-            self.makeRequest()
-        }
-        
-        return action
+    var sendButton = UIButton()
+    
+    lazy var sendAction = UIAction() { action in
+        let userChat = Chat(sender: .user, message: self.userInputTextView.text)
+        self.chats.append(userChat)
+        self.userInputTextView.text = ""
+        self.makeRequest()
+    }
+    
+    func settingButton() {
+        sendButton.addAction(sendAction, for: .touchUpInside)
+        sendButton.setImage(UIImage(named: "paw"), for: .normal)
     }
     
     init(pet: Pet) {
@@ -47,6 +50,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingButton()
         settingTableView()
         configureUI()
     }
@@ -84,7 +88,9 @@ class ChatViewController: UIViewController {
             lineStackView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor),
             lineStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
             lineStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            userInputTextView.heightAnchor.constraint(greaterThanOrEqualTo: sendButton.heightAnchor, multiplier: 1.2)
+            userInputTextView.heightAnchor.constraint(greaterThanOrEqualTo: sendButton.heightAnchor, multiplier: 1.2),
+            sendButton.widthAnchor.constraint(equalToConstant: 30),
+            sendButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
