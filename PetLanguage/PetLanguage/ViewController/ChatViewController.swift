@@ -16,6 +16,7 @@ class ChatViewController: UIViewController {
             }
         }
     }
+    let lineStackView = UIStackView(axis: .horizontal)
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
@@ -24,7 +25,6 @@ class ChatViewController: UIViewController {
         return tableView
     }()
     let userInputTextView = UITextView(borderColor: UIColor.darkGray.cgColor)
-    
     lazy var sendButton = UIButton {
         lazy var action = UIAction() { action in
             let userChat = Chat(sender: .user, message: self.userInputTextView.text)
@@ -35,9 +35,6 @@ class ChatViewController: UIViewController {
         
         return action
     }
-    
-    let lineStackView = UIStackView(axis: .horizontal)
-    let fullStackView = UIStackView(axis: .vertical)
     
     init(pet: Pet) {
         self.pet = pet
@@ -64,33 +61,30 @@ class ChatViewController: UIViewController {
     func configureUI() {
         navigationItem.title = pet.name
         view.backgroundColor = .systemBackground
+        view.addSubview(tableView)
+        view.addSubview(lineStackView)
         configureTableView()
         configureChatLine()
     }
     
     func configureTableView() {
-        view.addSubview(tableView)
-        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+            tableView.bottomAnchor.constraint(equalTo: lineStackView.topAnchor)
         ])
     }
     
     func configureChatLine() {
-        view.addSubview(lineStackView)
         lineStackView.addArrangedSubview(userInputTextView)
         lineStackView.addArrangedSubview(sendButton)
-        
+ 
         NSLayoutConstraint.activate([
-            //lineStackView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            lineStackView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 8),
-            lineStackView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: -8),
-            lineStackView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.bottomAnchor),
-            userInputTextView.widthAnchor.constraint(lessThanOrEqualTo: lineStackView.widthAnchor, multiplier: 0.9),
-            userInputTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 45)
+            lineStackView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor),
+            lineStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            lineStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            userInputTextView.heightAnchor.constraint(greaterThanOrEqualTo: sendButton.heightAnchor, multiplier: 1.2)
         ])
     }
     
