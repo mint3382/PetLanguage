@@ -65,34 +65,6 @@ struct Network {
             }
         }.resume()
     }
-//    
-//    static func fetchChat(chats: [PetSetting]) async throws -> ChatGPTData {
-//        var urlRequest = makeURLRequest()
-//        var chatting: [[String: String]] = []
-//        for chat in chats {
-//            chatting.append(["role": chat.role.useString(), "content": chat.message])
-//        }
-//        let jsonBody: [String: Any] = [
-//            "model": "gpt-3.5-turbo",
-//            "messages": chatting
-//        ]
-//        
-//        let jsonData = try? JSONSerialization.data(withJSONObject: jsonBody)
-//        
-//        urlRequest.httpBody = jsonData
-//        urlRequest.addValue("Bearer \(bearerToken)", forHTTPHeaderField: "Authorization")
-//        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-//        
-//        guard let httpResponse = response as? HTTPURLResponse,
-//              (200...299).contains(httpResponse.statusCode) else {
-//            throw NetworkError.server
-//        }
-//        
-//        let chatResponse = try JSONDecoder().decode(ChatGPTData.self, from: data)
-//        
-//        return chatResponse
-//    }
 }
 
 enum NetworkError: LocalizedError {

@@ -8,8 +8,8 @@
 import UIKit
 
 final class ChatViewController: UIViewController {
-    let pet: Pet
-    var chats: [Chat] = [] {
+    private let pet: Pet
+    private var chats: [Chat] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -17,18 +17,18 @@ final class ChatViewController: UIViewController {
             }
         }
     }
-    let lineStackView = UIStackView(axis: .horizontal)
-    let tableView: UITableView = {
+    private let lineStackView = UIStackView(axis: .horizontal)
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         return tableView
     }()
-    let userInputTextView = UITextView(borderColor: UIColor.darkGray.cgColor)
-    var sendButton = UIButton()
+    private let userInputTextView = UITextView(borderColor: UIColor.darkGray.cgColor)
+    private var sendButton = UIButton()
     
-    lazy var sendAction = UIAction() { action in
+    private lazy var sendAction = UIAction() { action in
         let userChat = Chat(sender: .user, message: self.userInputTextView.text)
         self.chats.append(userChat)
         self.userInputTextView.text = ""
@@ -53,12 +53,12 @@ final class ChatViewController: UIViewController {
         configureUI()
     }
     
-    func settingButton() {
+    private func settingButton() {
         sendButton.addAction(sendAction, for: .touchUpInside)
         sendButton.setImage(UIImage(named: "paw"), for: .normal)
     }
     
-    func settingTableView() {
+    private func settingTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
@@ -66,7 +66,7 @@ final class ChatViewController: UIViewController {
         tableView.register(PetChatCell.self, forCellReuseIdentifier: "PetChatCell")
     }
     
-    func configureUI() {
+    private func configureUI() {
         navigationItem.title = pet.name
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
@@ -75,7 +75,7 @@ final class ChatViewController: UIViewController {
         configureChatLine()
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -84,7 +84,7 @@ final class ChatViewController: UIViewController {
         ])
     }
     
-    func configureChatLine() {
+    private func configureChatLine() {
         lineStackView.addArrangedSubview(userInputTextView)
         lineStackView.addArrangedSubview(sendButton)
  
@@ -99,7 +99,7 @@ final class ChatViewController: UIViewController {
     }
     
     // 서버에게 데이터 받기
-    func makeRequest() {
+    private func makeRequest() {
         let settings: [PetSetting] = [PetSetting(role: .system, message: pet.makePrompt()), PetSetting(role: .user, message: chats.last?.message ?? "")]
         
         let networkManager = Network()
@@ -115,7 +115,7 @@ final class ChatViewController: UIViewController {
         }
     }
     
-    func scrollToBottom() {
+    private func scrollToBottom() {
         let indexPath = IndexPath(row: chats.count - 1, section: 0)
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }

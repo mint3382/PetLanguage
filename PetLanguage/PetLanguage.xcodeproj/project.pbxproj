@@ -159,8 +159,8 @@
 				92C43EF62AD8179100B4DADE /* UITextField+.swift */,
 				92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */,
 				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
-				923902F22AD8E0D800937818 /* UITextView+.swift */,
 				923902FE2AD98FE000937818 /* Bundle+.swift */,
+				923902F22AD8E0D800937818 /* UITextView+.swift */,
 				92B0D6362ADD659E0014D17C /* UIImageView+.swift */,
 			);
 			path = Extension;

@@ -7,26 +7,26 @@
 
 import UIKit
 
-class PetInformationViewController: UIViewController {
-    var pet: Pet?
-    var age: Int = 0
+final class PetInformationViewController: UIViewController {
+    private var pet: Pet?
+    private var age: Int = 0
     
-    let mainImage = UIImageView(file: "logo")
-    let nameImage = UIImageView(file: "name")
-    let ageImage = UIImageView(file: "age")
-    let speciesImage = UIImageView(file: "species")
+    private let mainImage = UIImageView(file: "logo")
+    private let nameImage = UIImageView(file: "name")
+    private let ageImage = UIImageView(file: "age")
+    private let speciesImage = UIImageView(file: "species")
     
-    let nameTextField = UITextField(placeholder: "이름")
-    var startButton = UIButton()
+    private let nameTextField = UITextField(placeholder: "이름")
+    private var startButton = UIButton()
     
-    lazy var speciesSegmentControl = UISegmentedControl(items: [catAction, dogAction])
-    lazy var catAction = UIAction(title: "냥냥?", handler: { action in
+    private lazy var speciesSegmentControl = UISegmentedControl(items: [catAction, dogAction])
+    private lazy var catAction = UIAction(title: "냥냥?", handler: { action in
         self.settingMainImage(type: .cat)
     })
-    lazy var dogAction = UIAction(title: "멍멍?", handler: { action in
+    private lazy var dogAction = UIAction(title: "멍멍?", handler: { action in
         self.settingMainImage(type: .dog)
     })
-    lazy var pushNextAction = UIAction() { action in
+    private lazy var pushNextAction = UIAction() { action in
         var pet: Pet
         
         if self.speciesSegmentControl.selectedSegmentIndex == 0 {
@@ -40,13 +40,13 @@ class PetInformationViewController: UIViewController {
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
-    let stackView = UIStackView(axis: .vertical)
-    let nameLineStackView = UIStackView(axis: .horizontal)
-    let ageLineStackView = UIStackView(axis: .horizontal)
-    let speciesLineStackView = UIStackView(axis: .horizontal)
+    private let stackView = UIStackView(axis: .vertical)
+    private let nameLineStackView = UIStackView(axis: .horizontal)
+    private let ageLineStackView = UIStackView(axis: .horizontal)
+    private let speciesLineStackView = UIStackView(axis: .horizontal)
     
-    let ageList: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
-    let agePickerView = UIPickerView()
+    private let ageList: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+    private let agePickerView = UIPickerView()
 
     
     override func viewDidLoad() {
@@ -60,17 +60,17 @@ class PetInformationViewController: UIViewController {
         configureLineStackViews()
     }
     
-    func settingButtons() {
+    private func settingButtons() {
         startButton.addAction(pushNextAction, for: .touchUpInside)
         startButton.setImage(UIImage(named: "start"), for: .normal)
         startButton.showsMenuAsPrimaryAction = true
     }
     
-    func settingMainImage(type: PetType) {
+    private func settingMainImage(type: PetType) {
         self.mainImage.image = UIImage(named: type.randomImage())
     }
     
-    func settingPet(type: PetType) -> Pet {
+    private func settingPet(type: PetType) -> Pet {
         guard let name = self.nameTextField.text else {
             return Pet(name: "secret", age: age, species: type)
         }
@@ -78,7 +78,7 @@ class PetInformationViewController: UIViewController {
         return Pet(name: name, age: age, species: type)
     }
     
-    func configureLineStackViews() {
+    private func configureLineStackViews() {
         nameLineStackView.addArrangedSubview(nameImage)
         nameLineStackView.addArrangedSubview(nameTextField)
         
@@ -98,7 +98,7 @@ class PetInformationViewController: UIViewController {
         ])
     }
 
-    func configureStackView() {
+    private func configureStackView() {
         view.addSubview(stackView)
         stackView.alignment = .fill
         

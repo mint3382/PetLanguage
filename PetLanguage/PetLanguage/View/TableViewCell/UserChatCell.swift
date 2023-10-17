@@ -7,9 +7,8 @@
 
 import UIKit
 
-class UserChatCell: UITableViewCell {
+final class UserChatCell: UITableViewCell {
     static let identifier: String = "UserChatCell"
-
     let chatLabel = PaddingLabel(backgroundColor: .cyan)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -23,7 +22,7 @@ class UserChatCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureChat() {
+    private func configureChat() {
         contentView.addSubview(chatLabel)
         
         NSLayoutConstraint.activate([
