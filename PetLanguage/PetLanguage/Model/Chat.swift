@@ -2,10 +2,8 @@
 //  Chat.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/13/23.
+//  Created by mint on 10/13/23.
 //
-
-import Foundation
 
 struct Chat {
     enum Sender {

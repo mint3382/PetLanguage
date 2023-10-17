@@ -2,12 +2,10 @@
 //  GPTNetworkService.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/14/23.
+//  Created by mint on 10/14/23.
 //
 
 import Foundation
-
-// TODO: - 내용 분리
 
 struct GPTNetworkService: DataTaskManageable {
     private func makeHTTPBody(chats: [PetSetting]) -> Data? {

@@ -2,13 +2,12 @@
 //  UserChatCell.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/13/23.
+//  Created by mint on 10/13/23.
 //
 
 import UIKit
 
 final class UserChatCell: UITableViewCell {
-    static let identifier: String = "UserChatCell"
     let chatLabel = PaddingLabel(backgroundColor: .cyan)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

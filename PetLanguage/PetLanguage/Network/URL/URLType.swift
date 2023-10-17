@@ -2,7 +2,7 @@
 //  URLType.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/17/23.
+//  Created by mint on 10/17/23.
 //
 
 import Foundation

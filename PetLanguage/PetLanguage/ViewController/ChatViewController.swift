@@ -2,7 +2,7 @@
 //  ChatViewController.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/12/23.
+//  Created by mint on 10/12/23.
 //
 
 import UIKit
@@ -139,13 +139,13 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch chats[indexPath.row].sender {
         case .pet:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: PetChatCell.identifier, for: indexPath) as? PetChatCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PetChatCell", for: indexPath) as? PetChatCell else {
                 return UITableViewCell()
             }
             cell.chatLabel.text = chats[indexPath.row].message
             return cell
         case .user:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: UserChatCell.identifier, for: indexPath) as? UserChatCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserChatCell", for: indexPath) as? UserChatCell else {
                 return UITableViewCell()
             }
             cell.chatLabel.text = chats[indexPath.row].message

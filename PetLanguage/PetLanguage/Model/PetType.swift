@@ -2,10 +2,8 @@
 //  PetType.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/16/23.
+//  Created by mint on 10/16/23.
 //
-
-import Foundation
 
 enum PetType {
     case cat

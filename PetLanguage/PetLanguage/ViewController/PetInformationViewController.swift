@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/12/23.
+//  Created by mint on 10/12/23.
 //
 
 import UIKit

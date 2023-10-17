@@ -2,10 +2,8 @@
 //  Role.swift
 //  PetLanguage
 //
-//  Created by minsong kim on 10/15/23.
+//  Created by mint on 10/15/23.
 //
-
-import Foundation
 
 enum Role {
     case system
