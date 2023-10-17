@@ -17,6 +17,7 @@ final class ChatViewController: UIViewController {
             }
         }
     }
+    
     private let lineStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.spacing = 8
