@@ -24,7 +24,12 @@ final class PetInformationViewController: UIViewController {
     }()
     private let agePickerView = UIPickerView()
     private lazy var speciesSegmentControl = UISegmentedControl(items: [catAction, dogAction])
-    private var startButton = UIButton()
+    private lazy var startButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "start"), for: .normal)
+        button.addAction(pushNextAction, for: .touchUpInside)
+        return button
+    }()
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -78,16 +83,9 @@ final class PetInformationViewController: UIViewController {
         nameTextField.delegate = self
         agePickerView.delegate = self
         agePickerView.dataSource = self
-        settingButtons()
         configureUI()
     }
-    
-    private func settingButtons() {
-        startButton.addAction(pushNextAction, for: .touchUpInside)
-        startButton.setImage(UIImage(named: "start"), for: .normal)
-        startButton.showsMenuAsPrimaryAction = true
-    }
-    
+
     private func settingMainImage(type: PetType) {
         self.mainImage.image = UIImage(named: type.randomImage())
     }

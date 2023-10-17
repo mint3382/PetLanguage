@@ -30,7 +30,6 @@
 		92C43EEC2AD8135600B4DADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C43EEB2AD8135600B4DADE /* Assets.xcassets */; };
 		92C43EEF2AD8135600B4DADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */; };
 		92C43EF92AD819F800B4DADE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EF82AD819F800B4DADE /* ChatViewController.swift */; };
-		92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFC2AD81F9200B4DADE /* UIButton+.swift */; };
 		92C43F002AD849DB00B4DADE /* UserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFF2AD849DB00B4DADE /* UserChatCell.swift */; };
 		92C43F022AD849F000B4DADE /* PetChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43F012AD849F000B4DADE /* PetChatCell.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		92C43EEE2AD8135600B4DADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92C43EF02AD8135600B4DADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C43EF82AD819F800B4DADE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		92C43EFC2AD81F9200B4DADE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		92C43EFF2AD849DB00B4DADE /* UserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatCell.swift; sourceTree = "<group>"; };
 		92C43F012AD849F000B4DADE /* PetChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetChatCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				923902FE2AD98FE000937818 /* Bundle+.swift */,
-				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
 				92B0D6362ADD659E0014D17C /* UIImageView+.swift */,
 			);
 			path = Extension;
@@ -286,7 +283,6 @@
 				92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */,
 				923902FF2AD98FE000937818 /* Bundle+.swift in Sources */,
 				92B0D64E2ADEC1970014D17C /* ErrorAlertPresentable.swift in Sources */,
-				92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */,
 				92B0D6372ADD659E0014D17C /* UIImageView+.swift in Sources */,
 				92C43F022AD849F000B4DADE /* PetChatCell.swift in Sources */,
 				92B0D64C2ADEB9450014D17C /* GPTSetting.swift in Sources */,
