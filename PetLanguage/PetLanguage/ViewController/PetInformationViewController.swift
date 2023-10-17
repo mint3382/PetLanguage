@@ -79,8 +79,7 @@ final class PetInformationViewController: UIViewController {
         agePickerView.delegate = self
         agePickerView.dataSource = self
         settingButtons()
-        configureStackView()
-        configureLineStackViews()
+        configureUI()
     }
     
     private func settingButtons() {
@@ -93,13 +92,17 @@ final class PetInformationViewController: UIViewController {
         self.mainImage.image = UIImage(named: type.randomImage())
     }
     
+    private func configureUI() {
+        view.addSubview(stackView)
+        configureStackView()
+        configureLineStackViews()
+    }
+    
     private func configureLineStackViews() {
         nameLineStackView.addArrangedSubview(nameImage)
         nameLineStackView.addArrangedSubview(nameTextField)
-        
         ageLineStackView.addArrangedSubview(ageImage)
         ageLineStackView.addArrangedSubview(agePickerView)
-        
         speciesLineStackView.addArrangedSubview(speciesImage)
         speciesLineStackView.addArrangedSubview(speciesSegmentControl)
         
@@ -114,21 +117,15 @@ final class PetInformationViewController: UIViewController {
     }
 
     private func configureStackView() {
-        view.addSubview(stackView)
-        
         stackView.addArrangedSubview(mainImage)
         stackView.addArrangedSubview(nameLineStackView)
         stackView.addArrangedSubview(ageLineStackView)
         stackView.addArrangedSubview(speciesLineStackView)
         stackView.addArrangedSubview(startButton)
         
-        
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
+            stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
             mainImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
             mainImage.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
             startButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
