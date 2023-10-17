@@ -11,8 +11,10 @@ final class ChatViewController: UIViewController {
     let pet: Pet
     var chats: [Chat] = [] {
         didSet {
-            tableView.reloadData()
-            scrollToBottom()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.scrollToBottom()
+            }
         }
     }
     let lineStackView = UIStackView(axis: .horizontal)
