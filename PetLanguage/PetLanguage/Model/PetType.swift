@@ -16,7 +16,7 @@ enum PetType {
         case .cat:
             return "cat\(Int.random(in: 1...16))"
         case .dog:
-            return "dog\(Int.random(in: 1...5))"
+            return "dog\(Int.random(in: 1...6))"
         }
     }
 }
