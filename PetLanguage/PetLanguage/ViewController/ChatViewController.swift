@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController {
     let pet: Pet
     var chats: [Chat] = [] {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            tableView.reloadData()
+            scrollToBottom()
         }
     }
     let lineStackView = UIStackView(axis: .horizontal)
@@ -34,10 +33,6 @@ class ChatViewController: UIViewController {
         self.makeRequest()
     }
     
-    func settingButton() {
-        sendButton.addAction(sendAction, for: .touchUpInside)
-        sendButton.setImage(UIImage(named: "paw"), for: .normal)
-    }
     
     init(pet: Pet) {
         self.pet = pet
@@ -50,14 +45,21 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layer.contents = UIImage(named: "\(pet.species.randomImage())")?.cgImage
         settingButton()
         settingTableView()
         configureUI()
     }
     
+    func settingButton() {
+        sendButton.addAction(sendAction, for: .touchUpInside)
+        sendButton.setImage(UIImage(named: "paw"), for: .normal)
+    }
+    
     func settingTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
         tableView.register(UserChatCell.self, forCellReuseIdentifier: "UserChatCell")
         tableView.register(PetChatCell.self, forCellReuseIdentifier: "PetChatCell")
     }
@@ -109,6 +111,11 @@ class ChatViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    func scrollToBottom() {
+        let indexPath = IndexPath(row: chats.count - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
 

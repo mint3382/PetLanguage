@@ -182,6 +182,8 @@
 			dependencies = (
 			);
 			name = PetLanguage;
+			packageProductDependencies = (
+			);
 			productName = PetLanguage;
 			productReference = 92C43EDF2AD8135500B4DADE /* PetLanguage.app */;
 			productType = "com.apple.product-type.application";
@@ -210,6 +212,8 @@
 				Base,
 			);
 			mainGroup = 92C43ED62AD8135500B4DADE;
+			packageReferences = (
+			);
 			productRefGroup = 92C43EE02AD8135500B4DADE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
