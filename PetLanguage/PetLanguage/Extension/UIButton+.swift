@@ -15,12 +15,5 @@ extension UIButton {
         self.backgroundColor = color
         self.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    convenience init(action: (() -> UIAction)) {
-        self.init(frame: .zero)
-        self.init(primaryAction: action())
-        self.setImage(UIImage(systemName: "paperplane"), for: .normal)
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
 }
 
