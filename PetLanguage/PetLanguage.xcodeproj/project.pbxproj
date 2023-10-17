@@ -13,15 +13,18 @@
 		923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FA2AD98DD700937818 /* ChatGPTData.swift */; };
 		923902FD2AD98F2700937818 /* ChatGPTInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923902FC2AD98F2700937818 /* ChatGPTInfo.plist */; };
 		923902FF2AD98FE000937818 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FE2AD98FE000937818 /* Bundle+.swift */; };
-		923903022AD9948500937818 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903012AD9948500937818 /* Network.swift */; };
+		923903022AD9948500937818 /* GPTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903012AD9948500937818 /* GPTNetworkService.swift */; };
 		923903042ADAE88800937818 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903032ADAE88800937818 /* Role.swift */; };
 		923903062ADAE93C00937818 /* PetSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923903052ADAE93C00937818 /* PetSetting.swift */; };
 		9239030B2ADBDDBB00937818 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239030A2ADBDDBB00937818 /* PaddingLabel.swift */; };
 		92B0D6352ADD655E0014D17C /* PetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D6342ADD655E0014D17C /* PetType.swift */; };
 		92B0D6372ADD659E0014D17C /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D6362ADD659E0014D17C /* UIImageView+.swift */; };
+		92B0D6442ADE96530014D17C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D6432ADE96530014D17C /* NetworkError.swift */; };
 		92B0D6482ADEAAC20014D17C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D6472ADEAAC20014D17C /* HTTPMethod.swift */; };
 		92B0D64A2ADEAAE90014D17C /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D6492ADEAAE90014D17C /* URLType.swift */; };
 		92B0D64C2ADEB9450014D17C /* GPTSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D64B2ADEB9450014D17C /* GPTSetting.swift */; };
+		92B0D64E2ADEC1970014D17C /* ErrorAlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D64D2ADEC1970014D17C /* ErrorAlertPresentable.swift */; };
+		92B0D6512ADEC3F80014D17C /* DataTaskManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0D6502ADEC3F80014D17C /* DataTaskManageable.swift */; };
 		92C43EE32AD8135500B4DADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE22AD8135500B4DADE /* AppDelegate.swift */; };
 		92C43EE52AD8135500B4DADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE42AD8135500B4DADE /* SceneDelegate.swift */; };
 		92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE62AD8135500B4DADE /* PetInformationViewController.swift */; };
@@ -42,15 +45,18 @@
 		923902FA2AD98DD700937818 /* ChatGPTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
 		923902FC2AD98F2700937818 /* ChatGPTInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ChatGPTInfo.plist; sourceTree = "<group>"; };
 		923902FE2AD98FE000937818 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
-		923903012AD9948500937818 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		923903012AD9948500937818 /* GPTNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTNetworkService.swift; sourceTree = "<group>"; };
 		923903032ADAE88800937818 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		923903052ADAE93C00937818 /* PetSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSetting.swift; sourceTree = "<group>"; };
 		9239030A2ADBDDBB00937818 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		92B0D6342ADD655E0014D17C /* PetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetType.swift; sourceTree = "<group>"; };
 		92B0D6362ADD659E0014D17C /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		92B0D6432ADE96530014D17C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		92B0D6472ADEAAC20014D17C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		92B0D6492ADEAAE90014D17C /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
 		92B0D64B2ADEB9450014D17C /* GPTSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTSetting.swift; sourceTree = "<group>"; };
+		92B0D64D2ADEC1970014D17C /* ErrorAlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertPresentable.swift; sourceTree = "<group>"; };
+		92B0D6502ADEC3F80014D17C /* DataTaskManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskManageable.swift; sourceTree = "<group>"; };
 		92C43EDF2AD8135500B4DADE /* PetLanguage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetLanguage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C43EE22AD8135500B4DADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C43EE42AD8135500B4DADE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,10 +126,46 @@
 		92B0D6392ADD6E6A0014D17C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				923903012AD9948500937818 /* Network.swift */,
+				923903012AD9948500937818 /* GPTNetworkService.swift */,
 				92B0D6452ADEAAA50014D17C /* URL */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		92B0D6412ADE78780014D17C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				92C43EE22AD8135500B4DADE /* AppDelegate.swift */,
+				92C43EE42AD8135500B4DADE /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		92B0D6422ADE96430014D17C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				92B0D6432ADE96530014D17C /* NetworkError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		92B0D6452ADEAAA50014D17C /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				92B0D6472ADEAAC20014D17C /* HTTPMethod.swift */,
+				92B0D6492ADEAAE90014D17C /* URLType.swift */,
+				92B0D64B2ADEB9450014D17C /* GPTSetting.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		92B0D64F2ADEC2F00014D17C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				92B0D64D2ADEC1970014D17C /* ErrorAlertPresentable.swift */,
+				92B0D6502ADEC3F80014D17C /* DataTaskManageable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		92C43ED62AD8135500B4DADE = {
@@ -145,14 +187,14 @@
 		92C43EE12AD8135500B4DADE /* PetLanguage */ = {
 			isa = PBXGroup;
 			children = (
+				92B0D64F2ADEC2F00014D17C /* Protocol */,
+				92B0D6412ADE78780014D17C /* Application */,
 				92C43EFE2AD8203000B4DADE /* Extension */,
+				92B0D6392ADD6E6A0014D17C /* Network */,
 				92B0D6422ADE96430014D17C /* Error */,
 				923903002AD9944A00937818 /* Model */,
 				92B0D6382ADD6E5B0014D17C /* View */,
 				923902F72AD8E2AC00937818 /* ViewController */,
-				92B0D6392ADD6E6A0014D17C /* Network */,
-				92C43EE22AD8135500B4DADE /* AppDelegate.swift */,
-				92C43EE42AD8135500B4DADE /* SceneDelegate.swift */,
 				92C43EEB2AD8135600B4DADE /* Assets.xcassets */,
 				92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */,
 				92C43EF02AD8135600B4DADE /* Info.plist */,
@@ -164,10 +206,10 @@
 		92C43EFE2AD8203000B4DADE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				923902FE2AD98FE000937818 /* Bundle+.swift */,
+				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
 				92C43EF62AD8179100B4DADE /* UITextField+.swift */,
 				92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */,
-				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
-				923902FE2AD98FE000937818 /* Bundle+.swift */,
 				923902F22AD8E0D800937818 /* UITextView+.swift */,
 				92B0D6362ADD659E0014D17C /* UIImageView+.swift */,
 			);
@@ -252,6 +294,7 @@
 				9239030B2ADBDDBB00937818 /* PaddingLabel.swift in Sources */,
 				92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */,
 				923902FF2AD98FE000937818 /* Bundle+.swift in Sources */,
+				92B0D64E2ADEC1970014D17C /* ErrorAlertPresentable.swift in Sources */,
 				92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */,
 				92B0D6372ADD659E0014D17C /* UIImageView+.swift in Sources */,
 				92C43F022AD849F000B4DADE /* PetChatCell.swift in Sources */,
@@ -268,10 +311,11 @@
 				92B0D6482ADEAAC20014D17C /* HTTPMethod.swift in Sources */,
 				92C43EE52AD8135500B4DADE /* SceneDelegate.swift in Sources */,
 				92B0D6442ADE96530014D17C /* NetworkError.swift in Sources */,
+				92B0D6512ADEC3F80014D17C /* DataTaskManageable.swift in Sources */,
 				923902F52AD8E18E00937818 /* Pet.swift in Sources */,
 				923902F32AD8E0D800937818 /* UITextView+.swift in Sources */,
 				92C43EF72AD8179100B4DADE /* UITextField+.swift in Sources */,
-				923903022AD9948500937818 /* Network.swift in Sources */,
+				923903022AD9948500937818 /* GPTNetworkService.swift in Sources */,
 				923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

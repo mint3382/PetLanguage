@@ -98,26 +98,27 @@ final class ChatViewController: UIViewController {
         ])
     }
     
+    private func scrollToBottom() {
+        let indexPath = IndexPath(row: chats.count - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+}
+
+extension ChatViewController: ErrorAlertPresentable {
     // 서버에게 데이터 받기
     private func makeRequest() {
         let settings: [PetSetting] = [PetSetting(role: .system, message: pet.makePrompt()), PetSetting(role: .user, message: chats.last?.message ?? "")]
         
-        let networkManager = Network()
-        let request = networkManager.makeURLRequest(chats: settings)
-        let _: () = networkManager.performRequest(request: request) { result in
+        let networkManager = GPTNetworkService()
+        networkManager.fetchChatGPTData(chats: settings) { [weak self] result in
             switch result {
             case .success(let data):
                 let petChat = Chat(sender: .pet, message: data.choices[0].message.content)
-                self.chats.append(petChat)
+                self?.chats.append(petChat)
             case .failure(let error):
-                print(error)
+                self?.presentErrorCheckAlert(error: error)
             }
         }
-    }
-    
-    private func scrollToBottom() {
-        let indexPath = IndexPath(row: chats.count - 1, section: 0)
-        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
 
