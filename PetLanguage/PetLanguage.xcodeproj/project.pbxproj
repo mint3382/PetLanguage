@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		923902F12AD8720E00937818 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902F02AD8720E00937818 /* Chat.swift */; };
-		923902F32AD8E0D800937818 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902F22AD8E0D800937818 /* UITextView+.swift */; };
 		923902F52AD8E18E00937818 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902F42AD8E18E00937818 /* Pet.swift */; };
 		923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923902FA2AD98DD700937818 /* ChatGPTData.swift */; };
 		923902FD2AD98F2700937818 /* ChatGPTInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 923902FC2AD98F2700937818 /* ChatGPTInfo.plist */; };
@@ -30,9 +29,7 @@
 		92C43EE72AD8135500B4DADE /* PetInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EE62AD8135500B4DADE /* PetInformationViewController.swift */; };
 		92C43EEC2AD8135600B4DADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C43EEB2AD8135600B4DADE /* Assets.xcassets */; };
 		92C43EEF2AD8135600B4DADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C43EED2AD8135600B4DADE /* LaunchScreen.storyboard */; };
-		92C43EF72AD8179100B4DADE /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EF62AD8179100B4DADE /* UITextField+.swift */; };
 		92C43EF92AD819F800B4DADE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EF82AD819F800B4DADE /* ChatViewController.swift */; };
-		92C43EFB2AD81F7700B4DADE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */; };
 		92C43EFD2AD81F9200B4DADE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFC2AD81F9200B4DADE /* UIButton+.swift */; };
 		92C43F002AD849DB00B4DADE /* UserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43EFF2AD849DB00B4DADE /* UserChatCell.swift */; };
 		92C43F022AD849F000B4DADE /* PetChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C43F012AD849F000B4DADE /* PetChatCell.swift */; };
@@ -40,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		923902F02AD8720E00937818 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		923902F22AD8E0D800937818 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		923902F42AD8E18E00937818 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		923902FA2AD98DD700937818 /* ChatGPTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
 		923902FC2AD98F2700937818 /* ChatGPTInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ChatGPTInfo.plist; sourceTree = "<group>"; };
@@ -64,9 +60,7 @@
 		92C43EEB2AD8135600B4DADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92C43EEE2AD8135600B4DADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92C43EF02AD8135600B4DADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92C43EF62AD8179100B4DADE /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		92C43EF82AD819F800B4DADE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		92C43EFC2AD81F9200B4DADE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		92C43EFF2AD849DB00B4DADE /* UserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatCell.swift; sourceTree = "<group>"; };
 		92C43F012AD849F000B4DADE /* PetChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetChatCell.swift; sourceTree = "<group>"; };
@@ -187,10 +181,10 @@
 		92C43EE12AD8135500B4DADE /* PetLanguage */ = {
 			isa = PBXGroup;
 			children = (
-				92B0D64F2ADEC2F00014D17C /* Protocol */,
 				92B0D6412ADE78780014D17C /* Application */,
 				92C43EFE2AD8203000B4DADE /* Extension */,
 				92B0D6392ADD6E6A0014D17C /* Network */,
+				92B0D64F2ADEC2F00014D17C /* Protocol */,
 				92B0D6422ADE96430014D17C /* Error */,
 				923903002AD9944A00937818 /* Model */,
 				92B0D6382ADD6E5B0014D17C /* View */,
@@ -208,9 +202,6 @@
 			children = (
 				923902FE2AD98FE000937818 /* Bundle+.swift */,
 				92C43EFC2AD81F9200B4DADE /* UIButton+.swift */,
-				92C43EF62AD8179100B4DADE /* UITextField+.swift */,
-				92C43EFA2AD81F7700B4DADE /* UIStackView+.swift */,
-				923902F22AD8E0D800937818 /* UITextView+.swift */,
 				92B0D6362ADD659E0014D17C /* UIImageView+.swift */,
 			);
 			path = Extension;
@@ -300,7 +291,6 @@
 				92C43F022AD849F000B4DADE /* PetChatCell.swift in Sources */,
 				92B0D64C2ADEB9450014D17C /* GPTSetting.swift in Sources */,
 				923902F12AD8720E00937818 /* Chat.swift in Sources */,
-				92C43EFB2AD81F7700B4DADE /* UIStackView+.swift in Sources */,
 				92C43EF92AD819F800B4DADE /* ChatViewController.swift in Sources */,
 				92B0D6352ADD655E0014D17C /* PetType.swift in Sources */,
 				92B0D64A2ADEAAE90014D17C /* URLType.swift in Sources */,
@@ -313,8 +303,6 @@
 				92B0D6442ADE96530014D17C /* NetworkError.swift in Sources */,
 				92B0D6512ADEC3F80014D17C /* DataTaskManageable.swift in Sources */,
 				923902F52AD8E18E00937818 /* Pet.swift in Sources */,
-				923902F32AD8E0D800937818 /* UITextView+.swift in Sources */,
-				92C43EF72AD8179100B4DADE /* UITextField+.swift in Sources */,
 				923903022AD9948500937818 /* GPTNetworkService.swift in Sources */,
 				923902FB2AD98DD700937818 /* ChatGPTData.swift in Sources */,
 			);

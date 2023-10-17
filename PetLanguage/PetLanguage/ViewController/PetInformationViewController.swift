@@ -10,44 +10,67 @@ import UIKit
 final class PetInformationViewController: UIViewController {
     private var pet: Pet?
     private var age: Int = 0
+    private let ageList: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
     
     private let mainImage = UIImageView(file: "logo")
     private let nameImage = UIImageView(file: "name")
     private let ageImage = UIImageView(file: "age")
     private let speciesImage = UIImageView(file: "species")
-    
-    private let nameTextField = UITextField(placeholder: "이름")
-    private var startButton = UIButton()
-    
+    private let nameTextField: UITextField = {
+        let text = UITextField()
+        text.placeholder = "이름"
+        text.borderStyle = .roundedRect
+        return text
+    }()
+    private let agePickerView = UIPickerView()
     private lazy var speciesSegmentControl = UISegmentedControl(items: [catAction, dogAction])
-    private lazy var catAction = UIAction(title: "냥냥?", handler: { action in
-        self.settingMainImage(type: .cat)
+    private var startButton = UIButton()
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    private let nameLineStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        stackView.alignment = .center
+        return stackView
+    }()
+    private let ageLineStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        return stackView
+    }()
+    private let speciesLineStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        stackView.alignment = .center
+        return stackView
+    }()
+    private lazy var catAction = UIAction(title: "냥냥?", handler: { [weak self] action in
+        self?.settingMainImage(type: .cat)
     })
-    private lazy var dogAction = UIAction(title: "멍멍?", handler: { action in
-        self.settingMainImage(type: .dog)
+    private lazy var dogAction = UIAction(title: "멍멍?", handler: { [weak self] action in
+        self?.settingMainImage(type: .dog)
     })
-    private lazy var pushNextAction = UIAction() { action in
+    private lazy var pushNextAction = UIAction() { [weak self] action in
         var pet: Pet
+        guard let name = self?.nameTextField.text else {
+            return
+        }
         
-        if self.speciesSegmentControl.selectedSegmentIndex == 0 {
-            pet = self.settingPet(type: .cat)
+        if self?.speciesSegmentControl.selectedSegmentIndex == 0 {
+            pet = Pet(name: name, age: self?.age ?? 100, species: .cat)
         } else {
-            pet = self.settingPet(type: .dog)
+            pet = Pet(name: name, age: self?.age ?? 100, species: .dog)
         }
         
         let nextViewController = ChatViewController(pet: pet)
         
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        self?.navigationController?.pushViewController(nextViewController, animated: true)
     }
-    
-    private let stackView = UIStackView(axis: .vertical)
-    private let nameLineStackView = UIStackView(axis: .horizontal)
-    private let ageLineStackView = UIStackView(axis: .horizontal)
-    private let speciesLineStackView = UIStackView(axis: .horizontal)
-    
-    private let ageList: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
-    private let agePickerView = UIPickerView()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,14 +91,6 @@ final class PetInformationViewController: UIViewController {
     
     private func settingMainImage(type: PetType) {
         self.mainImage.image = UIImage(named: type.randomImage())
-    }
-    
-    private func settingPet(type: PetType) -> Pet {
-        guard let name = self.nameTextField.text else {
-            return Pet(name: "secret", age: age, species: type)
-        }
-        
-        return Pet(name: name, age: age, species: type)
     }
     
     private func configureLineStackViews() {
@@ -100,7 +115,6 @@ final class PetInformationViewController: UIViewController {
 
     private func configureStackView() {
         view.addSubview(stackView)
-        stackView.alignment = .fill
         
         stackView.addArrangedSubview(mainImage)
         stackView.addArrangedSubview(nameLineStackView)

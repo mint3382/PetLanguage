@@ -17,24 +17,33 @@ final class ChatViewController: UIViewController {
             }
         }
     }
-    private let lineStackView = UIStackView(axis: .horizontal)
+    private let lineStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        stackView.alignment = .center
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
         return tableView
     }()
-    private let userInputTextView = UITextView(borderColor: UIColor.darkGray.cgColor)
+    private let userInputTextView: UITextView = {
+        let textView = UITextView()
+        textView.layer.borderColor = UIColor.darkGray.cgColor
+        textView.layer.borderWidth = 1
+        textView.layer.cornerRadius = 8
+        return textView
+    }()
     private var sendButton = UIButton()
-    
-    private lazy var sendAction = UIAction() { action in
-        let userChat = Chat(sender: .user, message: self.userInputTextView.text)
-        self.chats.append(userChat)
-        self.userInputTextView.text = ""
-        self.makeRequest()
+    private lazy var sendAction = UIAction() { [weak self] action in
+        let userChat = Chat(sender: .user, message: self?.userInputTextView.text)
+        self?.chats.append(userChat)
+        self?.userInputTextView.text = ""
+        self?.receiveChatGPTResponse()
     }
-    
     
     init(pet: Pet) {
         self.pet = pet
@@ -47,7 +56,7 @@ final class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.layer.contents = UIImage(named: "\(pet.species.randomImage())")?.cgImage
+        view.layer.contents = UIImage(named: "paws")?.cgImage
         settingButton()
         settingTableView()
         configureUI()
@@ -105,8 +114,7 @@ final class ChatViewController: UIViewController {
 }
 
 extension ChatViewController: ErrorAlertPresentable {
-    // 서버에게 데이터 받기
-    private func makeRequest() {
+    private func receiveChatGPTResponse() {
         let settings: [PetSetting] = [PetSetting(role: .system, message: pet.makePrompt()), PetSetting(role: .user, message: chats.last?.message ?? "")]
         
         let networkManager = GPTNetworkService()
@@ -128,12 +136,17 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if chats[indexPath.row].sender == .user {
-            let cell = tableView.dequeueReusableCell(withIdentifier: UserChatCell.identifier, for: indexPath) as! UserChatCell
+        switch chats[indexPath.row].sender {
+        case .pet:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PetChatCell.identifier, for: indexPath) as? PetChatCell else {
+                return UITableViewCell()
+            }
             cell.chatLabel.text = chats[indexPath.row].message
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: PetChatCell.identifier, for: indexPath) as! PetChatCell
+        case .user:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: UserChatCell.identifier, for: indexPath) as? UserChatCell else {
+                return UITableViewCell()
+            }
             cell.chatLabel.text = chats[indexPath.row].message
             return cell
         }
