@@ -23,19 +23,19 @@ Chat-GPT를 활용해 마치 고양이나 강아지와 대화하는 것처럼 �
 
 | 런치스크린 | 메인 화면 |
 |:--------:|:--------:|
-|<img src="https://hackmd.io/_uploads/S15Ug_TWp.gif" alt="launch Screen" width="250">|<img src="https://hackmd.io/_uploads/BJ1JMdT-a.gif" alt="main_view" width="250">|
+|<img src="https://velog.velcdn.com/images/mintsong/post/71b28cc2-e9b9-4f76-8442-c98898214a32/image.gif" alt="launch Screen" width="250">|<img src="https://velog.velcdn.com/images/mintsong/post/b8e1c975-ca3a-453a-870f-4796507e1172/image.gif" alt="main_view" width="250">|
 
-| 이름 입력(keyboard) | 나이 변경(pickerView) |
+| 이름 입력(keyboard) | 나이 설정(pickerView) |
 |:--------:|:--------:|
-|<img src="https://hackmd.io/_uploads/SyWxbuTb6.gif" alt="launch Screen" width="250">|<img src="https://hackmd.io/_uploads/S16lZdTZ6.gif" alt="main_view" width="250">|
+|<img src="https://velog.velcdn.com/images/mintsong/post/21ff97e4-129b-42a1-993a-3c8fbb11ea9e/image.gif" alt="launch Screen" width="250">|<img src="https://velog.velcdn.com/images/mintsong/post/67c303a8-491b-4d81-87ae-e302cc650163/image.gif" alt="main_view" width="250">|
 
 | 종 선택(segmented control) | 채팅창으로 화면 전환 |
 |:--------:|:--------:|
-|<img src="https://hackmd.io/_uploads/rJNOed6ZT.gif" alt="launch Screen" width="250">|<img src="https://hackmd.io/_uploads/S1pCgd6-p.gif" alt="launch Screen" width="250">|
+|<img src="https://velog.velcdn.com/images/mintsong/post/3eaa1fd6-6546-426c-bb17-d4ff819c25ac/image.gif" alt="launch Screen" width="250">|<img src="https://velog.velcdn.com/images/mintsong/post/f391b623-d9b2-4799-a2af-46826c067650/image.gif" alt="launch Screen" width="250">|
 
 | 고양이와 채팅 | 강아지와 채팅 |
 |:--------:|:--------:|
-|<img src="https://hackmd.io/_uploads/HkqMbOTbp.gif" alt="launch Screen" width="250">|<img src="https://hackmd.io/_uploads/SylvpJkMT.gif" alt="main_view" width="250">|
+|<img src="https://velog.velcdn.com/images/mintsong/post/a07d5508-edf8-4c5e-9165-fd6a0d16d55a/image.gif" alt="launch Screen" width="250">|<img src="https://velog.velcdn.com/images/mintsong/post/3acc1c0e-2305-40b4-a667-a1450f22afae/image.gif" alt="main_view" width="250">|
 
 
 </br>
@@ -69,7 +69,7 @@ Chat-GPT를 활용해 마치 고양이나 강아지와 대화하는 것처럼 �
 -
 🔒 **문제점** <br>
 단순하게 GPT role 중 system을 설정할 때, "\(name)을 가진 \(age)살의 \(고양이 or 강아지)"라고만 해줬더니 가끔 고양이나 강아지로서가 아니라 인공지능 GPT 로서의 답변을 할 때가 있었다. 예를 들어 "MVVM 알아?" 라고 물어보면 그에 대한 답변이 MVVM에 대한 설명이었다.
-![](https://hackmd.io/_uploads/By2DsxJMp.png)
+![](https://velog.velcdn.com/images/mintsong/post/8f9c6c69-7081-46e6-aee3-009010f4e800/image.png)
 
 🔑 **해결방법** <br>
 Pet Type에 따라 prompt를 조금 더 구체적으로, 영어로 작성했다. 
@@ -111,7 +111,7 @@ struct Pet {
 4️⃣ **Label Padding** <br>
 -
 🔒 **문제점** <br>
-![](https://hackmd.io/_uploads/S1-PjeyGT.png)
+![](https://velog.velcdn.com/images/mintsong/post/41ad5b2e-721c-4eb5-be29-4511c95b4b0e/image.png)
 Label로 구성하다보니 글자에 딱 맞춰서 붙어있었고 여기에 채팅창 모양처럼 모서리에 곡선을 주고 나니 글자가 짤리기까지 했다.
 
 🔑 **해결방법** <br>
@@ -170,6 +170,7 @@ final class PaddingLabel: UILabel {
 ### 👨‍💻 팀원
 | 😈MINT😈 |
 | :--------: |
-| <img src="https://hackmd.io/_uploads/SJp7Aeyf6.png"  width="200" height="200"> |
+| <img src="https://velog.velcdn.com/images/mintsong/post/4f2fba63-d6c0-48dc-bb4a-49186ac5465b/image.jpg"  width="250" height="200"> |
 |[Github Profile](https://github.com/mint3382) |
+
 
