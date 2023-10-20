@@ -37,6 +37,9 @@ Chat-GPT를 활용해 마치 고양이나 강아지와 대화하는 것처럼 �
 |:--------:|:--------:|
 |<img src="https://velog.velcdn.com/images/mintsong/post/a07d5508-edf8-4c5e-9165-fd6a0d16d55a/image.gif" alt="launch Screen" width="250">|<img src="https://velog.velcdn.com/images/mintsong/post/3acc1c0e-2305-40b4-a667-a1450f22afae/image.gif" alt="main_view" width="250">|
 
+| API 에러 시 알림창 처리 |
+|:--------:|
+|<img src="https://velog.velcdn.com/images/mintsong/post/97bd2a23-54c2-4372-9f81-fe300073b4a9/image.gif" alt="launch Screen" width="250">|
 
 </br>
 
