@@ -72,8 +72,8 @@ final class ChatViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
-        tableView.register(UserChatCell.self, forCellReuseIdentifier: "UserChatCell")
-        tableView.register(PetChatCell.self, forCellReuseIdentifier: "PetChatCell")
+        tableView.register(UserChatCell.self, forCellReuseIdentifier: String(describing: UserChatCell.self))
+        tableView.register(PetChatCell.self, forCellReuseIdentifier: String(describing: PetChatCell.self))
     }
     
     private func configureUI() {
@@ -137,15 +137,16 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //TODO: index를 subscript 사용하여 안전하게
         switch chats[indexPath.row].sender {
-        case .pet:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PetChatCell", for: indexPath) as? PetChatCell else {
+        case .user:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UserChatCell.self), for: indexPath) as? UserChatCell else {
                 return UITableViewCell()
             }
             cell.chatLabel.text = chats[indexPath.row].message
             return cell
-        case .user:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserChatCell", for: indexPath) as? UserChatCell else {
+        case .pet:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PetChatCell.self), for: indexPath) as? PetChatCell else {
                 return UITableViewCell()
             }
             cell.chatLabel.text = chats[indexPath.row].message

@@ -67,6 +67,7 @@ final class PetInformationViewController: UIViewController {
         }
         
         if self?.speciesSegmentControl.selectedSegmentIndex == 0 {
+            //TODO: age 이유 있는 100
             pet = Pet(name: name, age: self?.age ?? 100, species: .cat)
         } else {
             pet = Pet(name: name, age: self?.age ?? 100, species: .dog)
@@ -150,6 +151,7 @@ extension PetInformationViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //TODO: index subscript 통해 안전하게 만들것
         age = Int(ageList[row]) ?? 100
     }
     
