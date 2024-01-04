@@ -251,6 +251,7 @@
 			);
 			mainGroup = 92C43ED62AD8135500B4DADE;
 			packageReferences = (
+				927001D62B01FB2B0045FD36 /* XCRemoteSwiftPackageReference "Gifu" */,
 			);
 			productRefGroup = 92C43EE02AD8135500B4DADE /* Products */;
 			projectDirPath = "";
@@ -444,7 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7893FPZS4T;
+				DEVELOPMENT_TEAM = BMG3X5CM6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetLanguage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -471,7 +472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7893FPZS4T;
+				DEVELOPMENT_TEAM = BMG3X5CM6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetLanguage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -513,6 +514,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		927001D62B01FB2B0045FD36 /* XCRemoteSwiftPackageReference "Gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/Gifu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 92C43ED72AD8135500B4DADE /* Project object */;
 }
