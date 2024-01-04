@@ -72,6 +72,7 @@ final class ChatViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.keyboardDismissMode = .interactive
         tableView.register(UserChatCell.self, forCellReuseIdentifier: "UserChatCell")
         tableView.register(PetChatCell.self, forCellReuseIdentifier: "PetChatCell")
     }
